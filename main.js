@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const nome = document.querySelector('#nome');
     const username = document.querySelector('#username');
     const repos = document.querySelector('#repos');
-    const followers = document.querySelector('#avatar');
+    const followers = document.querySelector('#followers');
     const following = document.querySelector('#following');
     const avatar = document.querySelector('#avatar');
     const link = document.querySelector('#link');
@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
             return res.json();
         })
         .then(function(json) {
-            nome.innerText = json.nome;
+            console.log(json);
+            nome.innerText = json.name;
             username.innerText = json.login;
             avatar.src = json.avatar_url;
             followers.innerText = json.followers;
